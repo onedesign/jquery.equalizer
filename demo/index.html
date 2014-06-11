@@ -42,7 +42,9 @@
 				$elements = $('.equalizeHeight');
 				
 				$('#equalizeHeight').on('click', function(){
-					$elements.equalizer();
+					$elements.equalizer({
+						heightProperty: 'max'
+					});
 				});
 			});
 		</script>

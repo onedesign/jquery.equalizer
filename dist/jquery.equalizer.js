@@ -11,7 +11,7 @@
   $.fn.equalizer = function(options) {
 
     var settings = $.extend( {
-      heightProperty: 'height',      // gets passed straight through so accepts min-height, max-height or height
+      heightProperty: 'default',      // gets passed straight through so accepts min, max or default
       key: 'tallest'                 // passing in smallest will resize to the smallest rather than the largest
     }, options );
 
@@ -27,8 +27,6 @@
       heights.push(elHeight);
     });
 
-    console.log(heights);
-
     if(settings.key === 'shortest') {
       newHeight = Math.min.apply(Math, heights);
     } else if(settings.key === 'average') {
@@ -40,9 +38,6 @@
     } else {
       newHeight = Math.max.apply(Math, heights);
     }
-
-    console.log(newHeight);
-
 
     // Returning
     if(settings.heightProperty === 'min') {

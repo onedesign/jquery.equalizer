@@ -1,0 +1,40 @@
+{
+	"name": "equlizer",
+	"title": "jQuery Equlizer",
+	"description": "A tiny plugin for making elements the same size.",
+	"keywords": [
+		"jquery",
+		"height",
+		"size",
+		"equal",
+		"equalize",
+		"same",
+		"plugins"
+	],
+	"version": "1.0",
+	"author": {
+		"name": "One Design Company",
+		"email": "dev@onedesigncompany.com",
+		"url": "https://github.com/onedesign"
+	},
+	"maintainers": [
+		{
+			"name": "Brian Hanson",
+			"email": "brian@onedesigncompany.com",
+			"url": "https://github.com/brianjhanson"
+		}
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://zenorocha.mit-license.org/"
+		}
+	],
+	"bugs": "https://github.com/onedesign/jquery.equalizer/issues",
+	"homepage": "https://github.com/onedesign/jquery.equalizer",
+	"docs": "https://github.com/onedesign/jquery.equalizer#readme",
+	"download": "",
+	"dependencies": {
+		"jquery": ">=1.4"
+	}
+}

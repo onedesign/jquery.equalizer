@@ -11,10 +11,12 @@
   $.fn.equalizer = function(options) {
 
     var settings = $.extend( {
-      heightProperty: 'height'      // gets passed straight through so accepts min-height, max-height or height
+      heightProperty: 'height',      // gets passed straight through so accepts min-height, max-height or height
+      key: 'tallest'                 // passing in smallest will resize to the smallest rather than the largest
     }, options );
 
-    var maxHeight = 0;
+    var newHeight;
+    var heights = [];
 
     this.each(function() {
       
@@ -22,20 +24,33 @@
       var elHeight;
 
       elHeight = $this.outerHeight();
-
-      if(elHeight > maxHeight){
-        maxHeight = elHeight;
-      }
-
+      heights.push(elHeight);
     });
+
+    console.log(heights);
+
+    if(settings.key === 'shortest') {
+      newHeight = Math.min.apply(Math, heights);
+    } else if(settings.key === 'average') {
+      var sum = 0;
+      for(var i = 0; i < heights.length; i++) {
+        sum += heights[i];
+      }
+      newHeight = sum/heights.length;
+    } else {
+      newHeight = Math.max.apply(Math, heights);
+    }
+
+    console.log(newHeight);
+
 
     // Returning
     if(settings.heightProperty === 'min') {
-      this.css({ 'min-height' : maxHeight});
+      this.css({ 'min-height' : newHeight});
     } else if(settings.heightProperty === 'max') {
-      this.css({ 'max-height' : maxHeight});
+      this.css({ 'max-height' : newHeight});
     } else {
-      this.css({ 'height' : maxHeight});
+      this.css({ 'height' : newHeight});
     }
 
     // Allows this to be chained

@@ -33,7 +33,7 @@
 	"bugs": "https://github.com/onedesign/jquery.equalizer/issues",
 	"homepage": "https://github.com/onedesign/jquery.equalizer",
 	"docs": "https://github.com/onedesign/jquery.equalizer#readme",
-	"download": "",
+	"download": "https://github.com/onedesign/jquery.equalizer/archive/master.zip",
 	"dependencies": {
 		"jquery": ">=1.4"
 	}

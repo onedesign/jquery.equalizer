@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>jQuery Boilerplate</title>
+		<title>jQuery Equalizer</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-		<script src="../src/jquery.boilerplate.js"></script>
+		<script src="../dist/jquery.equalizer.js"></script>
+		<link rel="stylesheet" href="demo.css">
 	</head>
 	<body>
-		<div id="element"></div>
+		<div class="row">
+			<a href="#" id="equalizeHeight">Equalize!</a>
+		</div>
+		<div class="row cf">
+			<div class="equalizeHeight">
+				<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.</p>
+			</div>
+			<div class="equalizeHeight">
+				<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+			</div>
+			<div class="equalizeHeight">
+				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue.</p>
+				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue.</p>
+				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue.</p>
+			</div>
+		</div>
+
+		<div class="row cf">
+			<div class="equalizeHeight">
+				<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec ullamcorper nulla non metus auctor fringilla.</p>
+			</div>
+			<div class="equalizeHeight">
+				<p>Maecenas sed diam eget risus varius blandit sit amet non magna. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+			</div>
+			<div class="equalizeHeight">
+				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue.</p>
+				<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Nulla vitae elit libero, a pharetra augue.</p>
+			</div>
+		</div>
+		
 		<script>
 			$(function() {
-				$("#element").defaultPluginName({
-					propertyName: "a custom value"
+				$elements = $('.equalizeHeight');
+				
+				$('#equalizeHeight').on('click', function(){
+					$elements.equalizer();
 				});
 			});
 		</script>
+	
 	</body>
 </html>

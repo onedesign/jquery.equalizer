@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		// Import package manifest
-		pkg: grunt.file.readJSON("boilerplate.jquery.json"),
+		pkg: grunt.file.readJSON("equalizer.jquery.json"),
 
 		// Banner definitions
 		meta: {
@@ -20,38 +20,32 @@ module.exports = function(grunt) {
 		// Concat definitions
 		concat: {
 			dist: {
-				src: ["src/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.js"
+				src: ["src/jquery.equalizer.js"],
+				dest: "dist/jquery.equalizer.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
-			}
-		},
-
-		// Lint definitions
-		jshint: {
-			files: ["src/jquery.boilerplate.js"],
-			options: {
-				jshintrc: ".jshintrc"
 			}
 		},
 
 		// Minify definitions
 		uglify: {
 			my_target: {
-				src: ["dist/jquery.boilerplate.js"],
-				dest: "dist/jquery.boilerplate.min.js"
+				src: ["dist/jquery.equalizer.js"],
+				dest: "dist/jquery.equalizer.min.js"
 			},
 			options: {
 				banner: "<%= meta.banner %>"
 			}
 		},
 
-		// CoffeeScript compilation
-		coffee: {
-			compile: {
-				files: {
-					"dist/jquery.boilerplate.js": "src/jquery.boilerplate.coffee"
+		// Watcher
+		watch: {
+			scripts: {
+				files: ['src/*.js'],
+				tasks: ['default'],
+				options: {
+					reload: true
 				}
 			}
 		}
@@ -62,8 +56,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-coffee");
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
+	grunt.registerTask("default", ["concat", "uglify", "watch"]);
 	grunt.registerTask("travis", ["jshint"]);
 
 };
